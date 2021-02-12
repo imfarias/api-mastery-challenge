@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     const regiao = regiaoNome[0].toLowerCase();
     const nomeInvocador = regiaoNome[1];
 
-    const url = `https://${regiao}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${nomeInvocador}`;
+    const url = `https://${regiao}.api.riotgames.com/lol/summoner/v4/summoners/${nomeInvocador}`;
 
     const responseSummoner = await fetch(url, {
         headers: {
