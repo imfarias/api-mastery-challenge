@@ -31,6 +31,6 @@ export default async function handler(req, res) {
 
     res.setHeader('Cache-Control', 's-maxage=7200, stale-while-revalidate');
     res.statusCode = 200;
-    res.json({dataInvocador});
+    res.json(dataInvocador);
 
 }
