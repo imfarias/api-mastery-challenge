@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
 
-    const RIOT_API = "RGAPI-b5f3f204-98d0-4e3b-9558-283c4365edf0";
+    const RIOT_API = process.env.RIOT_API;
 
     const {
         query: { regiaoNome },
