@@ -15,6 +15,18 @@ export default async function handler(req: any, res: any) {
             .find({group: id})
             .toArray();
 
+        await Promise.all(usuariosDoGrupo.map(async (user: any) => {
+            try {
+                user.champions = await db.collection("champions")
+                    .find({group: id, user: user.id})
+                    .toArray();
+
+                return user;
+            } catch (error) {
+                console.error(error);
+            }
+        }))
+
         grupo.users = usuariosDoGrupo;
 
         res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
