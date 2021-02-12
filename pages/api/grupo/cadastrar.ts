@@ -31,7 +31,6 @@ export default async function handler(req: any, res: any) {
 
         await db.collection('groups').insertOne(novoGrupo)
 
-        res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
         res.statusCode = 200;
         res.json(novoGrupo);
     }

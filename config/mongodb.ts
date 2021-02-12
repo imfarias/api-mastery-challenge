@@ -3,8 +3,6 @@ import { MongoClient } from 'mongodb';
 let uri = process.env.MONGODB_URI || "" // trick ts :(
 let dbName = process.env.MONGODB_DB
 
-console.log(uri);
-
 let cachedClient: any = null
 let cachedDb: any = null
 
