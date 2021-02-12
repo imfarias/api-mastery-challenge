@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const responseChampions = await fetch(`http://ddragon.leagueoflegends.com/cdn/${lastVersion}/data/pt_BR/champion.json`);
     let dataCampeoes = await responseChampions.json();
 
-    dataCampeoes = dataCampeoes.map(campeao => {
+    dataCampeoes.data = Object.values(dataCampeoes.data).map(campeao => {
         return {
             id: campeao.id,
             key: campeao.key,
