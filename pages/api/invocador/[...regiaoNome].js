@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     });
     const dataCampeoes = await responseCampeoes.json();
 
-    dataInvocador.campeoes = dataCampeoes;
+    dataInvocador.championMastery = dataCampeoes;
 
     res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
     res.statusCode = 200;
