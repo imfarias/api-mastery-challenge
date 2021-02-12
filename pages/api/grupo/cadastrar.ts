@@ -1,6 +1,6 @@
 import {connectToDatabase} from '@/config/mongodb';
 
-async function validaGrupoCadastrado(db: any, chaveGerada: string = "") {
+async function validaGrupoCadastrado(db: any, chaveGerada: string = ""): Promise<string> {
     let randomKey = chaveGerada
         ? chaveGerada
         : Math.random().toString(36).substring(7);
