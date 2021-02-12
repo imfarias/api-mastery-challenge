@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const responseChampions = await fetch(`http://ddragon.leagueoflegends.com/cdn/${lastVersion}/data/pt_BR/champion.json`);
     const dataCampeoes = await responseChampions.json();
 
-    res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate')
+    res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate')
     res.statusCode = 200
     res.json(dataCampeoes);
 }
